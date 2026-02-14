@@ -1,0 +1,45 @@
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Frontend (Next.js)
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/build/
+frontend/.vercel/
+frontend/*.tsbuildinfo
+frontend/next-env.d.ts
+frontend/.env
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+frontend/.pnpm-debug.log*
+
+# Backend (WordPress)
+backend/wp-config.php
+backend/wp-content/uploads/
+backend/wp-content/cache/
+backend/wp-content/backups/
+backend/wp-content/debug.log
+backend/.htaccess
+backend/wp-content/upgrade/
+backend/wp-content/languages/
+backend/license.txt
+backend/readme.html
+backend/xmlrpc.php
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
