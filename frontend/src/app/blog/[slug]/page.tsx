@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Container, Section } from '@/components/ui/Container';
 import { Button } from '@/components/ui/Button';
-import { getPostBySlug } from '@/lib/wordpress';
+import { getPostBySlug, getAllPosts } from '@/lib/wordpress';
 import { ArrowLeft, Calendar } from 'lucide-react';
 import { Metadata } from 'next';
 
@@ -19,6 +19,16 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         title: `${post.title} | Asif Pathan`,
         description: post.excerpt,
     };
+}
+
+export async function generateStaticParams() {
+    const posts = await getAllPosts();
+    // Verify that posts is an array to key the static params off of
+    if (!posts) return [];
+
+    return posts.map((post: any) => ({
+        slug: post.slug,
+    }));
 }
 
 export default async function SinglePostPage({ params }: PageProps) {
