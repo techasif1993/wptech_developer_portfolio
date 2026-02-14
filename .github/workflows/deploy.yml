@@ -42,9 +42,15 @@ jobs:
           local-dir: ./frontend/out/
           # CHANGE THIS if your FTP root is different.
           # Ideally, it should point to public_html/ inside your domain folder.
-          server-dir: ./public_html/
+          # server-dir should be ./ since the FTP user is rooted in public_html
+          server-dir: ./
           protocol: ftp
           exclude: |
             **/.git*
             **/.git*/**
             **/node_modules/**
+            api/**
+            wp-admin/**
+            wp-includes/**
+            wp-content/**
+            default.php
